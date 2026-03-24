@@ -10,6 +10,8 @@ cmake_minimum_required(VERSION 3.6.0)
 project(argon2-arm C CXX)
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Os")
 
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-z,max-page-size=16384")
+
 file(GLOB argon2-arm_SOURCES
        ./Argon2/src/blake2/blake2b.c
        ./Argon2/src/argon2.c
